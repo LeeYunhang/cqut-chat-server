@@ -1,12 +1,13 @@
 FROM python:3.5
 
 MAINTAINER Mrcode <mrcodehang@outlook.com>
-WORKDIR /var/www/cqut/chat-server/
+RUN mkdir -p /app
+WORKDIR /app
 
 RUN python -m pip install sanic
 
 COPY docker-entrypoint.sh /usr/local/bin/docker-entrypoint.sh
-ADD entry.py /var/www/cqut-chat-server/entry.py
+ADD entry.py entry.py
 
 RUN chmod +x /usr/local/bin/docker-entrypoint.sh
 
