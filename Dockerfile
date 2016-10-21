@@ -7,7 +7,7 @@ WORKDIR /app
 RUN python -m pip --default-timeout=100 install sanic
 
 COPY docker-entrypoint.sh /usr/local/bin/docker-entrypoint.sh
-ADD /app .
+ADD . /app
 
 RUN chmod +x /usr/local/bin/docker-entrypoint.sh
 
