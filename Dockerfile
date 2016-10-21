@@ -4,10 +4,10 @@ MAINTAINER Mrcode <mrcodehang@outlook.com>
 RUN mkdir -p /app
 WORKDIR /app
 
-RUN python -m pip install sanic
+RUN python -m pip --default-timeout=100 install sanic
 
 COPY docker-entrypoint.sh /usr/local/bin/docker-entrypoint.sh
-ADD entry.py entry.py
+ADD /app .
 
 RUN chmod +x /usr/local/bin/docker-entrypoint.sh
 
