@@ -1,10 +1,10 @@
-version: '2'
-services:
-  web:
-    build: .
-    ports:
-      - "8888:8888"
-    depends_on:
-      - mongo
-    redis:
-      image: mongo
+cqut-chat:
+  image: daocloud.io/mrcode/cqut-char-server
+  links:
+  - mongo
+  ports:
+  - 8888:8888
+  restart: always
+mongo:
+  image: mongo
+  restart: always
