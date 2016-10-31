@@ -7,7 +7,7 @@ app = Sanic(__name__)
 
 @app.route("/")
 async def test(request):
-    return json(client)
+    return json({'value': 'hello worldgit'})
 
 app.run(host="localhost", port=8888)
 
