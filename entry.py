@@ -9,5 +9,5 @@ app = Sanic(__name__)
 async def test(request):
     return json(client)
 
-app.run(host="0.0.0.0", port=8888)
+app.run(host="localhost", port=8888)
 
