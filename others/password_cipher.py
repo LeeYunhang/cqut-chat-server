@@ -1,8 +1,7 @@
 from Crypto.Hash import MD5
 
-
 def encrypt_password(password):
-    password = '#@$^%%&@#' + password + '!@#$%^&*(%#'
+    password = password = '#@$^%%&@#' + password + '!@#$%^&*(%#'
     m = MD5.new()
     m.update(bytes(source=password, encoding='utf8'))
 
@@ -11,6 +10,3 @@ def encrypt_password(password):
     m.update(bytes(source=password, encoding='utf8'))
 
     return m.hexdigest()
-
-print(encrypt_password('hello world'))
-print(encrypt_password('hello world'))
