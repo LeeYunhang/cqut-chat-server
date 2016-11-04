@@ -2,7 +2,6 @@ from Crypto.Hash import MD5
 from configs import get_config
 import time
 
-
 redis = get_config(key='redis')
 
 def get_token(username, password):

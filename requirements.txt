@@ -1,4 +1,4 @@
 sanic
 pymongo
 redis
-crypto
+Crypto
