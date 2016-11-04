@@ -1,6 +1,6 @@
 from sanic import Sanic
 from sanic.response import json
-from configs import get_config
+from configs import get_config, token_invalid
 from others import get_token, parse_token
 from sanic.request import json_loads
 
@@ -30,9 +30,4 @@ async def login_middle(request):
     elif request.url == '/api/sms' and request.method.lower() == 'post':
         return
     else:
-        return validate_error()
-
-def validate_error():
-    return json({
-        'error': 401
-    }, 401)
+        return { 'error': token_invalid }
